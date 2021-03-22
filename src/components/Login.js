@@ -1,10 +1,8 @@
-import React from 'react'
 import {Container, Form, Button} from "react-bootstrap";
 
 const Login = () => {
   return (
-    <div>
-        <Container>
+        <Container >
             <Form>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -26,7 +24,6 @@ const Login = () => {
               </Button>
             </Form>
         </Container>
-    </div>
   )
 }
 
