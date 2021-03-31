@@ -7,6 +7,7 @@ import {createStore} from "redux";
 import {loginReducer} from "./store/reducers/loginReducer";
 import reportWebVitals from './reportWebVitals';
 import axios from "axios";
+import {BrowserRouter} from 'react-router-dom';
 
 const store = createStore(loginReducer);
 
@@ -16,7 +17,9 @@ axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
