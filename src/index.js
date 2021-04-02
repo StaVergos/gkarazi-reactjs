@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
-import {createStore} from "redux";
+import {createStore, applyMiddleware, compose } from "redux";
+import thunk from 'redux-thunk';
 import {loginReducer} from "./store/reducers/loginReducer";
 import reportWebVitals from './reportWebVitals';
 import axios from "axios";
 import {BrowserRouter} from 'react-router-dom';
 
-const store = createStore(loginReducer);
+const store = createStore(loginReducer, composeEnhancers(
+  applyMiddleware(thunk)
+));
 
 axios.defaults.baseURL = 'http://127.0.0.1:5000/';
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwtToken');

@@ -1,1 +1,3 @@
-export const ISLOGIN = 'ISLOGIN';
+export const LOGINSTART = 'LOGINSTART';
+export const LOGINSUCCESS = 'LOGINSUCCESS';
+export const LOGINFAIL = 'LOGINFAIL';
